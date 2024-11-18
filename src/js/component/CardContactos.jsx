@@ -1,0 +1,45 @@
+import { useContext, useEffect } from "react";
+import { Context } from "../store/appContext"
+import React from "react";
+
+export const Card = () => {
+  const { store, actions } = useContext(Context);
+
+  useEffect(() => {
+    actions.getContacts();
+  }, []);
+
+  console.log(store.contactos);
+
+  return (
+    <>
+      {store.contactos.map((item, index) => {
+        return (
+          <div className="card mx-auto" key={index}>
+            <div className="row g-0">
+              <div className="col-md-4">
+                <img
+                  src="https://static.vecteezy.com/system/resources/previews/019/879/186/non_2x/user-icon-on-transparent-background-free-png.png"
+                  className="img-card"
+                  alt="..."
+                />
+              </div>
+              <div className="col-md-8">
+                <div className="card-body">
+                  <h5 className="card-title">{item.name}</h5>
+                  <p className="card-text">Address: {item.address}</p>
+                  <p className="card-text">Phone: {item.phone}</p>
+                  <p className="card-text">Email: {item.email}</p>
+                </div>
+                <div className="iconos">
+                  <button><i className="fas fa-trash"></i></button>
+                  <button><i className="fa-solid fa-pen-to-square"></i></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        );
+      })}
+    </>
+  );
+};
