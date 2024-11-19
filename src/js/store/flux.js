@@ -60,7 +60,7 @@ const getState = ({ getStore, getActions, setStore }) => {
                             console.error("no se agrego el contacto");
                         }
                     })
-                    .catch((error) => console.log("Error fetching contacts:", error));
+                    .catch((error) => console.log("Error", error));
             },
 			updateContact: (contact,id) => {
                 const store = getStore()
@@ -87,10 +87,10 @@ const getState = ({ getStore, getActions, setStore }) => {
                             })
                             setStore({ contactos: updatedContacts });
                         } else {
-                            console.error("no se actualizo el contacto");
+                            console.error("Error al actualizar el contacto");
                         }
                     })
-                    .catch((error) => console.log("Error fetching contacts:", error));
+                    .catch((error) => console.log("Error", error));
             },
 		}
 	};

@@ -33,20 +33,25 @@ export const Card = () => {
                   <p className="card-text">Email: {item.email}</p>
                 </div>
                 <div className="iconos">
-                  <button onClick={() => actions.removeContact(item.id)} >
-                    <i className="fas fa-trash"></i>
-                  </button>
-                  <Link
-                        to={`/edit/${item.id}`}
-                        className="btn btn-warning btn-sm w-40"
-                        aria-label="Edit contact"
-                      >
-                       <i className="fa-solid fa-pen-to-square"></i>
-                      </Link>
-                 
-                    
-                 
-                </div>
+  <button
+    className="btn btn-primary btn-sm w-40"
+    onClick={() => {
+      if (window.confirm("¿Estás seguro de que deseas eliminar este contacto?")) {
+        actions.removeContact(item.id);
+      }
+    }}
+  >
+    <i className="fas fa-trash"></i>
+  </button>
+
+  <Link
+    to={`/edit/${item.id}`}
+    className="btn btn-primary btn-sm w-40"
+    aria-label="Edit contact"
+  >
+    <i className="fa-solid fa-pen-to-square"></i>
+  </Link>
+</div>
               </div>
             </div>
           </div>
