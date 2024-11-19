@@ -4,7 +4,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			contactos: [],
 		},
 		actions: {
-			// Obtener lista de contactos
+			
 			getContacts: () => {
 				fetch(`https://playground.4geeks.com/contact/agendas/luisGalvan/contacts`)
 					.then(response => {
@@ -20,8 +20,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 						console.error('Error al obtener la información:', error);
 					});
 			},
-
-			// Eliminar un contacto
 			removeContact: (id) => {
 				fetch(`https://playground.4geeks.com/contact/agendas/luisGalvan/contacts/${id}`, {
 					method: "DELETE",
