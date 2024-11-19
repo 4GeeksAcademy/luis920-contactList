@@ -4,6 +4,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			contactos: [],
 		},
 		actions: {
+            
 			
 			getContacts: () => {
 				fetch(`https://playground.4geeks.com/contact/agendas/luisGalvan/contacts`)
@@ -90,6 +91,7 @@ const getState = ({ getStore, getActions, setStore }) => {
                     })
                     .catch((error) => console.log("Error", error));
             },
+            
 		}
 	};
 };

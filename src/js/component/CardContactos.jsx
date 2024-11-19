@@ -35,9 +35,9 @@ export const Card = () => {
               <div className="col-md-8">
                 <div className="card-body">
                   <h3 className="card-title">{item.name}</h3>
-                  <p className="card-text"><strong> <i class="fa-solid fa-location-dot"></i>Address:</strong>  {item.address}</p>
-                  <p className="card-text"><strong> <i class="fa-solid fa-phone"></i> Phone:</strong> {item.phone}</p>
-                  <p className="card-text"><strong><i class="fa-solid fa-envelope"></i> Email:</strong> {item.email}</p>
+                  <p className="card-text"><strong> <i className="fa-solid fa-location-dot"></i>Address:</strong>  {item.address}</p>
+                  <p className="card-text"><strong> <i className="fa-solid fa-phone"></i> Phone:</strong> {item.phone}</p>
+                  <p className="card-text"><strong><i className="fa-solid fa-envelope"></i> Email:</strong> {item.email}</p>
                 </div>
                 <div className="iconos">
                   <button
