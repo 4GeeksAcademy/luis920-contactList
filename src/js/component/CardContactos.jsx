@@ -1,6 +1,7 @@
 import { useContext, useEffect } from "react";
 import { Context } from "../store/appContext";
 import React from "react";
+import { Link } from "react-router-dom";
 
 export const Card = () => {
   const { store, actions } = useContext(Context);
@@ -35,9 +36,16 @@ export const Card = () => {
                   <button onClick={() => actions.removeContact(item.id)} >
                     <i className="fas fa-trash"></i>
                   </button>
-                  <button>
-                    <i className="fa-solid fa-pen-to-square"></i>
-                  </button>
+                  <Link
+                        to={`/edit/${item.id}`}
+                        className="btn btn-warning btn-sm w-40"
+                        aria-label="Edit contact"
+                      >
+                       <i className="fa-solid fa-pen-to-square"></i>
+                      </Link>
+                 
+                    
+                 
                 </div>
               </div>
             </div>
