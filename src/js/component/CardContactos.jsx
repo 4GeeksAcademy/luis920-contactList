@@ -1,5 +1,5 @@
 import { useContext, useEffect } from "react";
-import { Context } from "../store/appContext"
+import { Context } from "../store/appContext";
 import React from "react";
 
 export const Card = () => {
@@ -8,8 +8,8 @@ export const Card = () => {
   useEffect(() => {
     actions.getContacts();
   }, []);
+  
 
-  console.log(store.contactos);
 
   return (
     <>
@@ -32,8 +32,12 @@ export const Card = () => {
                   <p className="card-text">Email: {item.email}</p>
                 </div>
                 <div className="iconos">
-                  <button><i className="fas fa-trash"></i></button>
-                  <button><i className="fa-solid fa-pen-to-square"></i></button>
+                  <button onClick={() => actions.removeContact(item.id)} >
+                    <i className="fas fa-trash"></i>
+                  </button>
+                  <button>
+                    <i className="fa-solid fa-pen-to-square"></i>
+                  </button>
                 </div>
               </div>
             </div>
