@@ -7,17 +7,10 @@ export const Card = () => {
   const { store, actions } = useContext(Context);
 
   useEffect(() => {
+    actions.createAgenda();
     actions.getContacts();
     
-    fetch("https://playground.4geeks.com/contact/agendas/luisGalvan", {
-      headers: {
-        accept: "application/json",
-        "Content-type": "application/json",
-      },
-      method: "POST",
-    })
-      .then((response) => response.json())
-      .catch((error) => console.error("Error al crear el usuario:", error));
+    
   }, []);
 
   if (store.contactos.length === 0) {

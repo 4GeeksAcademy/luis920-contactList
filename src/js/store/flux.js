@@ -4,7 +4,17 @@ const getState = ({ getStore, getActions, setStore }) => {
 			contactos: [],
 		},
 		actions: {
-            
+            createAgenda: ()=>{
+                fetch("https://playground.4geeks.com/contact/agendas/luisGalvan", {
+                    headers: {
+                      accept: "application/json",
+                      "Content-type": "application/json",
+                    },
+                    method: "POST",
+                  })
+                    .then((response) => response.json())
+                    .catch((error) => console.error("Error al crear el usuario:", error));
+            },
 			
 			getContacts: () => {
 				fetch(`https://playground.4geeks.com/contact/agendas/luisGalvan/contacts`)
